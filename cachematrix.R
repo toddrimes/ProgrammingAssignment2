@@ -1,8 +1,10 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
-
+## makeCacheMatrix takes a matrix object
+##        - first time, the cached matrix object is cleared and getmatrix will
+##          return NULL
+##        - after setmatrix, the cached matrix is returned
 makeCacheMatrix <- function(x = matrix()) {
         matrix <- NULL
         set <- function(y) {
@@ -18,8 +20,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
-
+## cacheSolve takes a makeCacheMatrix instance
+##        - if cacheSolve is called with a new makeCacheMatrix, invoke setmatrix
+##          on it and return the result
+##       - subsequently, makeCacheMatrix$getmatrix returns the cached matrix
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'.
         m <- x$getmatrix()
